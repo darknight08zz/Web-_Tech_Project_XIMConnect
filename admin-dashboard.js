@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     adminTabs.forEach(tab => {
         tab.addEventListener('click', function() {
-            // Remove active class from all tabs and tab contents
             adminTabs.forEach(t => t.classList.remove('active'));
             tabContents.forEach(content => content.classList.remove('active'));
 
@@ -20,11 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const logoutBtn = document.querySelector('.logout-btn');
     if (logoutBtn) {
         logoutBtn.addEventListener('click', function(e) {
-            // Implement logout logic or redirect
-            // This might involve an AJAX call to a logout endpoint
-            // For now, we'll just show a simple confirmation
             if (confirm('Are you sure you want to log out?')) {
-                // Redirect to login page or call logout endpoint
                 window.location.href = 'login.php';
             }
         });
@@ -81,8 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const departmentSelect = document.getElementById('eventDepartment');
     if (departmentSelect) {
         departmentSelect.addEventListener('change', function() {
-            // Optional: Add custom behavior when department is selected
-            // For example, show/hide additional fields based on department
             console.log('Selected department:', this.value);
         });
     }
