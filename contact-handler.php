@@ -1,7 +1,6 @@
 <?php
 // contact-handler.php
 
-// Ensure the contacts.xml file and directory have correct permissions
 function ensureFilePermissions() {
     $xmlFile = 'contacts.xml';
     $directory = dirname($xmlFile);
@@ -34,7 +33,6 @@ function sanitizeXmlInput($input) {
 
 // Add contact to XML
 function addContactToXml($name, $email, $message) {
-    // Ensure file permissions are correct
     ensureFilePermissions();
 
     $xmlFile = 'contacts.xml';
