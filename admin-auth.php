@@ -3,10 +3,8 @@ session_start();
 
 // Check if user is logged in
 function checkLogin() {
-    // If on admin dashboard, verify login status
     if (strpos($_SERVER['PHP_SELF'], 'admin-dashboard.php') !== false) {
         if (!isset($_SESSION['adminLoggedIn']) || $_SESSION['adminLoggedIn'] !== true) {
-            // Redirect to login page if not logged in
             header('Location: admin-login.php');
             exit();
         }
@@ -32,11 +30,8 @@ function handleLoginSubmission() {
         }
         
         if ($authenticated) {
-            // Set session to remember login
             $_SESSION['adminLoggedIn'] = true;
             $_SESSION['adminUsername'] = $username;
-            
-            // Redirect to admin dashboard
             header('Location: admin-dashboard.php');
             exit();
         } else {
@@ -47,9 +42,7 @@ function handleLoginSubmission() {
     return $loginError ?? null;
 }
 
-// Handle logout
 function handleLogout() {
-    // Unset all session variables
     session_unset();
     session_destroy();
     
