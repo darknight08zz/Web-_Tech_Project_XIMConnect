@@ -60,11 +60,7 @@ function generateEventId() {
     // Load existing events
     $upcomingEvents = loadEventsFromXML(UPCOMING_EVENTS_FILE);
     $pastEvents = loadEventsFromXML(PAST_EVENTS_FILE);
-    
-    // Combine all events
     $allEvents = array_merge($upcomingEvents, $pastEvents);
-    
-    // If no events exist, start from 1
     if (empty($allEvents)) {
         return 'event_1';
     }
@@ -345,7 +341,6 @@ $adminUsername = isset($_SESSION['adminUsername']) ? $_SESSION['adminUsername'] 
     </div>
 
     <footer>
-        <!-- Footer content from admin-dashboard.html -->
         <div class="footer-container">
             <div class="footer-contact-form">
                 <h2>Contact Us</h2>
